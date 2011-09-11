@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<title>Cashpoint</title>
+<link href="css/smoothness/jquery-ui-1.8.16.custom.css" media="screen" rel="stylesheet" />
+<link href="css/cashpoint.css" media="screen" rel="stylesheet" />
+</head>
+<body>
+   <div id="loader"></div>
+   
+   <div id="headline">
+      <h1>.: Kasse</h1>
+      <button id="addVoucherButton">Kassenzettel hinzufügen</button>
+      <button id="addUserButton">Benutzer hinzufügen</button>
+   </div>
+   
+   <div id="content">
+   
+      <div id="addVoucherDialog" title="Kassenzettel hinzufügen">Dialog</div>
+   
+      <div id="addUserDialog" title="Benutzer hinzufügen">
+         Name: <input type="text" value="" id="addUserName" />
+      </div>
+      
+      <table>
+         <tr>
+         <td>Eintrag</td>
+         </tr>
+      </table>
+   </div>
+
+   <script type="text/javascript" src="nowjs/now.js"></script>
+   <script type="text/javascript" src="js/external/jquery-1.6.2.min.js"></script>
+   <script type="text/javascript" src="js/external/jquery-ui-1.8.16.custom.min.js"></script>
+   <script type="text/javascript" src="js/external/require.js"></script>
+   <script type="text/javascript">
+      $( function() {
+         require( [ 'js/setup' ], function( setup ) {
+            setup.setServerApi( now );
+            window.setTimeout( function() {
+               $( '#loader' ).fadeOut( 'slow' );
+            }, 300 );
+         } );
+      } );
+   </script>
+</body>
+</html>
