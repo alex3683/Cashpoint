@@ -7,6 +7,7 @@ define( function() {
          primary: "ui-icon-cart"
       }
    } );
+   
    $( '#addUserButton' ).button( {
       icons: {
          primary: "ui-icon-person"
