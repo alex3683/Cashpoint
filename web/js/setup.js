@@ -1,23 +1,43 @@
-define( function() {
+define( function( ) {
    
-   var server = null;
+   var _UserActionController = null;
+   var _VoucherActionController = null;
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
    
    $( '#addVoucherButton' ).button( {
       icons: {
-         primary: "ui-icon-cart"
+         primary: 'ui-icon-cart'
       }
    } );
    
    $( '#addUserButton' ).button( {
       icons: {
-         primary: "ui-icon-person"
+         primary: 'ui-icon-person'
       }
    } );
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   $( '#addVoucherPaidDate' ).datepicker( {
+      dateFormat: 'dd.mm.yy',
+      defaultDate: new Date(),
+      maxDate: new Date(),
+      firstDay: 1,
+      dayNames: [ 'Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag' ],
+      dayNamesMin: [ 'So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa' ],
+      monthNames: [ 'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September',
+            'Oktober', 'November', 'Dezember' ],
+      nextText: 'Nächster Monat',
+      prevText: 'Vorheriger Monat'
+   } );
+   
+   
    
    $( '#addVoucherDialog' ).dialog( {
       autoOpen: false,
       width: 350,
-      height: 150,
+      height: 200,
       modal: true,
       buttons: {
          'Hinzufügen': function() {
@@ -28,15 +48,28 @@ define( function() {
             $( this ).dialog( 'close' );
          }
       },
+      open: function() {
+         _UserActionController.getUsers( function( err, users ) {
+            var $userSelectBox = $( '#addVoucherUserName' );
+            $userSelectBox.empty();
+            users.forEach( function( user ) {
+               $( '<option>', {
+                  'value': user.name,
+                  'text': user.name
+               } ).appendTo( $userSelectBox );
+            } );
+         } ); 
+       },
       close: function() {
-         // remove error state
-         //allFields.val( '' ).removeClass( 'ui-state-error' );
+         $( '#addVoucherDialog input' ).val( '' ).removeClass( 'ui-state-error' );
       }
    } );
 
    $( '#addVoucherButton' ).click( function() {
       $( '#addVoucherDialog' ).dialog( 'open' );
    } );
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    $( '#addUserDialog' ).dialog( {
       autoOpen: false,
@@ -52,16 +85,9 @@ define( function() {
                return;
             }
 
-            server.addUserWithName( $( '#addUserName' ).val(), function( err ) {
+            _UserActionController.addUserWithName( $( '#addUserName' ).val(), function( err ) {
                if( err ) {
-                  switch( err.message ) {
-                     case 'notConnected':
-                        alert( 'Fehler: Datenbankverbindung nicht verfügbar' );
-                        break;
-                        
-                     default:
-                        alert( err.message );
-                  }
+                  alert( err );
                }
                else {
                   $( '#addUserDialog' ).dialog( 'close' );
@@ -82,9 +108,14 @@ define( function() {
       $( '#addUserDialog' ).dialog( 'open' );
    } );
    
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+   
    return {
-      setServerApi: function( api ) {
-         server = api;
+      setUserActionController: function( UserActionController ) {
+         _UserActionController = UserActionController;
+      },
+      setVoucherActionController: function( VoucherActionController ) {
+         _VoucherActionController = VoucherActionController;
       }
    };
    

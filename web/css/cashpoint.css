@@ -11,6 +11,18 @@ body, td {
    font-size: 12px;
 }
 
+#addVoucherDialog label,
+#addUserDialog label {
+   display: inline-block;
+   width: 100px;
+   text-align: right;
+}
+
+#addVoucherDialog label + div,
+#addUserDialog label + div {
+   display: inline-block;
+}
+
 #loader {
    position: fixed;
    top: 0px;

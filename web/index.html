@@ -18,10 +18,30 @@
    
    <div id="content">
    
-      <div id="addVoucherDialog" title="Kassenzettel hinzufügen">Dialog</div>
+      <div id="addVoucherDialog" title="Kassenzettel hinzufügen">
+         <div>
+            <label for="addVoucherAmount">Betrag:</label>
+            <div><input id="addVoucherAmount" type="number" /></div>
+         </div>
+         <div>
+            <label for="addVoucherPaidDate">Bezahlt am:</label>
+            <div><input id="addVoucherPaidDate" type="text" /></div>
+         </div>
+         <div>
+            <label for="addVoucherUserName">Bezahlt von:</label>
+            <div><select id="addVoucherUserName"></select></div>
+         </div>
+         <div>
+            <label for="addVoucherComment">Kommentar:</label>
+            <div><input id="addVoucherComment" type="text" /></div>
+         </div>
+      </div>
    
       <div id="addUserDialog" title="Benutzer hinzufügen">
-         Name: <input type="text" value="" id="addUserName" />
+         <div>
+            <label for="addUserName">Name:</label>
+            <div><input id="addUserName" type="text" /></div>
+         </div>
       </div>
       
       <table>
@@ -37,11 +57,19 @@
    <script type="text/javascript" src="js/external/require.js"></script>
    <script type="text/javascript">
       $( function() {
-         require( [ 'js/setup' ], function( setup ) {
-            setup.setServerApi( now );
-            window.setTimeout( function() {
-               $( '#loader' ).fadeOut( 'slow' );
-            }, 300 );
+         now.ready( function() {
+            require( [ 'js/setup', 'js/user_action_controller', 'js/voucher_action_controller' ],
+                     function( Setup, UserActionController, VoucherActionController ) {
+               UserActionController.setServerApi( now );
+               VoucherActionController.setServerApi( now );
+               
+               Setup.setUserActionController( UserActionController );
+               Setup.setVoucherActionController( VoucherActionController );
+               
+               window.setTimeout( function() {
+                  $( '#loader' ).fadeOut( 'slow' );
+               }, 300 );
+            } );
          } );
       } );
    </script>
