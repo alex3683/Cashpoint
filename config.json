@@ -1,3 +1,4 @@
 {
-   "httpPort": 8080
+   "httpPort": 8080,
+   "dataBaseURL": "mongodb://localhost/cashpoint"
 }

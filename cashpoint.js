@@ -7,5 +7,5 @@ var config = JSON.parse( fs.readFileSync( __dirname + '/config.json', 'utf-8' ) 
 
 console.log( config );
 
-storage.initialize();
+storage.initialize( config.dataBaseURL );
 clientApi.initialize( server.start( config.httpPort ), storage );
