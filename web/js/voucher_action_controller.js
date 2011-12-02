@@ -56,7 +56,9 @@ define( function() {
                var voucher = {
                   'amount': amount,
                   'paid_date': $( '#addVoucherPaidDate' ).datepicker( 'getDate' ),
-                  'comment': $( '#addVoucherComment' ).val()
+                  'comment': $( '#addVoucherComment' ).val(),
+                  'repaid': false,
+                  'repaid_date': null
                };
 
                addVoucherForUser( voucher, user, function( err ) {

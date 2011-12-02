@@ -44,16 +44,29 @@
          </div>
       </div>
       
-      <table>
-         <tr>
-         <td>Eintrag</td>
-         </tr>
-      </table>
+      <div class="dataTable" id="voucherListing">
+         <div class="dataTableHeader">
+            <div class="dataTableColumn">Bezahlt am</div>
+            <div class="dataTableColumn">Bezahlt von</div>
+            <div class="dataTableColumn">Betrag</div>
+            <div class="dataTableColumn">Kommentar</div>
+         </div>
+         <script id="voucherListingRowTemplate" type="text/x-handlebars-template">
+         <div class="dataTableRow" id="voucherListingRow_{{voucherId}}" data-sort-attribute="{{sortAttribute}}">
+            <div class="dataTableColumn">{{paidAt}}</div>
+            <div class="dataTableColumn">{{paidBy}}</div>
+            <div class="dataTableColumn">{{amount}}</div>
+            <div class="dataTableColumn">{{comment}}</div>
+         </div>
+         </script>
+      </div>
    </div>
 
    <script type="text/javascript" src="nowjs/now.js"></script>
+   <script type="text/javascript" src="js/external/date.format.js"></script>
    <script type="text/javascript" src="js/external/jquery-1.6.2.min.js"></script>
    <script type="text/javascript" src="js/external/jquery-ui-1.8.16.custom.min.js"></script>
+   <script type="text/javascript" src="js/external/handlebars-1.0.0.beta.4.js"></script>
    <script type="text/javascript" src="js/external/require.js"></script>
    <script type="text/javascript">
       $( function() {

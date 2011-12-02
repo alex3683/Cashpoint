@@ -1,5 +1,5 @@
-define( [ 'js/user_action_controller', 'js/voucher_action_controller' ],
-        function( UserActionController, VoucherActionController ) {
+define( [ 'js/user_action_controller', 'js/voucher_action_controller', 'js/voucher_listing_controller' ],
+        function( UserActionController, VoucherActionController, VoucherListingController ) {
    
    var _serverApi = null;
    
@@ -7,6 +7,11 @@ define( [ 'js/user_action_controller', 'js/voucher_action_controller' ],
       _serverApi = serverApi;
       _serverApi.handleEvent = function( event ) {
          console.log( event );
+         switch( event.type ) {
+            case 'voucherAdded':
+               VoucherListingController.handleVoucherAdded( event.data );
+               break;
+         }
       };
    }
    
@@ -17,6 +22,9 @@ define( [ 'js/user_action_controller', 'js/voucher_action_controller' ],
       UserActionController.setupUIElements();
       VoucherActionController.setServerApi( _serverApi );
       VoucherActionController.setupUIElements();
+
+      VoucherListingController.setServerApi( _serverApi );
+      VoucherListingController.initialize();
    }
    
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
