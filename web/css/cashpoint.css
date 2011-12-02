@@ -16,7 +16,6 @@ body, td {
 }
 
 .ui-widget input, .ui-widget select, .ui-widget textarea {
-   box-sizing: border-box;
    width: 166px;
 }
 
