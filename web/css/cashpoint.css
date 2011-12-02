@@ -11,6 +11,20 @@ body, td {
    font-size: 12px;
 }
 
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    border: 1px solid #666666;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea {
+   box-sizing: border-box;
+   width: 166px;
+}
+
+#addVoucherDialog > div,
+#addUserDialog > div {
+   padding: 2px;
+}
+
 #addVoucherDialog label,
 #addUserDialog label {
    display: inline-block;
@@ -29,8 +43,12 @@ body, td {
    left: 0px;
    width: 100%;
    height: 100%;
-   background-color: #000;
+   background-color: #2E6E9E;
    z-index: 100;
+   
+   color: #fff;
+   text-align: center;
+   padding-top: 10px;
 }
 
 #headline {

@@ -8,7 +8,7 @@
 <link href="css/cashpoint.css" media="screen" rel="stylesheet" />
 </head>
 <body>
-   <div id="loader"></div>
+   <div id="loader">Lade ...</div>
    
    <div id="headline">
       <h1>.: Kasse</h1>
@@ -58,16 +58,12 @@
    <script type="text/javascript">
       $( function() {
          now.ready( function() {
-            require( [ 'js/setup', 'js/user_action_controller', 'js/voucher_action_controller' ],
-                     function( Setup, UserActionController, VoucherActionController ) {
-               UserActionController.setServerApi( now );
-               VoucherActionController.setServerApi( now );
-               
-               Setup.setUserActionController( UserActionController );
-               Setup.setVoucherActionController( VoucherActionController );
+            require( [ 'js/page_controller' ], function( PageController ) {
+               PageController.setServerApi( now );
+               PageController.initialize();
                
                window.setTimeout( function() {
-                  $( '#loader' ).fadeOut( 'slow' );
+                  $( '#loader' ).effect( 'drop' );
                }, 300 );
             } );
          } );
