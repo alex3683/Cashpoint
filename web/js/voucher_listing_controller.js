@@ -25,7 +25,7 @@ define( function() {
       $( '#voucherListing' ).find( '.dataTableRow' ).each( function() {
          $row = $( this );
          var sortAttribute = parseInt( $row.data( 'sortAttribute' ), 10 );
-         if( sortAttribute < repaidTimeStamp ) {
+         if( sortAttribute <= repaidTimeStamp ) {
             $row.before( str );
             found = true;
             return false;
