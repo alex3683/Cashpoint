@@ -87,6 +87,7 @@ body, td {
 }
 
 .dataTable > .dataTableRow > .dataTableColumn {
+   padding: 2px 5px;
    background-color: rgba(235,241,246,1);
    border-top: 1px solid #fff;
 }
