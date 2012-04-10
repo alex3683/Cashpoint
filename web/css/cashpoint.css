@@ -67,6 +67,10 @@ body, td {
    margin: 0;
    margin-bottom: 20px;
 }
+#headline h1::before {
+   content: '.: ';
+}
+
 
 #content {
    padding: 20px;

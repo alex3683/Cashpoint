@@ -6,7 +6,7 @@ define( [ 'js/user_action_controller', 'js/voucher_action_controller', 'js/vouch
    function setServerApi( serverApi ) {
       _serverApi = serverApi;
       _serverApi.handleEvent = function( event ) {
-         console.log( event );
+         //console.log( event );
          switch( event.type ) {
             case 'voucherAdded':
                VoucherListingController.handleVoucherAdded( event.data );

@@ -1,1 +1,4 @@
+.DS_Store
 *.gz
+node_modules
+web/js/external/highcharts

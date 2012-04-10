@@ -100,6 +100,12 @@ define( function() {
             $( '#addVoucherDialog' ).dialog( 'open', users );
          } );
       } );
+      
+      $( '#calculateVouchers' ).click( function() {
+         _server.calculateDebts( function( err, amount ) {
+            console.log( "eyey: " + amount );
+         } );
+      } );
    }
 
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
