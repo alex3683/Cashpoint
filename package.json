@@ -1,0 +1,30 @@
+{
+   "name": "cashpoint",
+   "description": "A Cashpoint for shared vouchers.",
+   "author": "Alexander Wilden",
+   "main": "./cashpoint",
+   "version": "0.1.0",
+   "keywords": "cashpoint, voucher, bills",
+   "maintainers": [ {
+      "name": "Alexander Wilden",
+      "email": "october.rust@gmx.de",
+      "web": "http://www.alexanderwilden.de"
+   } ],
+   "contributors": [],
+   "bugs": "mailto:october.rust@gmx.de",
+   "licenses": [ {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+   } ],
+   "repositories": [ {
+      "type": "git", 
+      "url": "git://github.com/alex3683/Cashpoint.git"
+   } ],
+   "dependencies": {
+      "async": "0.1.15",
+      "connect": "1.8.5",
+      "connect-gzip": "0.1.5",
+      "mongoose": "2.4.10",
+      "now": "0.8.1"
+   }
+}
