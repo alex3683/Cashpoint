@@ -6,7 +6,11 @@ This project is in its early beginnings and far from being done.
 
 # Setup:
 
-You only need a running [mongoDB](http://www.mongodb.org/) server and [node.js](http://nodejs.org/) installed. This application is developed using version 0.6.3 of node.js, but it might run as well under an earlier version.
+In order to run this application you'll need [node.js](http://nodejs.org/) and [mongoDB](http://www.mongodb.org/) running on your system. 
+This application is developed using version 0.6.3 of node.js, but it might as well run with an earlier version. 
+Additionally I recommend using [npm](http://npmjs.org/) to easily install all required node modules.
+
+Install dependencies via npm: `npm install`
 
 If necessary make changes to config.json (which should be quite self-explanatory).
 
@@ -16,6 +20,7 @@ Then fire it up: `node cashpoint.js`
 
 ## on the server:
 
+- [async](http://github.com/caolan/async)
 - [connect](http://senchalabs.github.com/connect/)
 - [connect-gzip](https://github.com/nateps/connect-gzip)
 - [mongoose](http://mongoosejs.com/)
