@@ -102,8 +102,11 @@ define( function() {
       } );
       
       $( '#calculateVouchers' ).click( function() {
-         _server.calculateDebts( function( err, amount ) {
-            console.log( "eyey: " + amount );
+         _server.getNonRepaidVouchers( function( err, vouchers ) {
+
+            _server.calculateDebts( vouchers, function( err, amount ) {
+               console.log( "eyey: " + amount );
+            } );
          } );
       } );
    }

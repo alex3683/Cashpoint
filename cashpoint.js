@@ -11,6 +11,3 @@ console.log( config );
 storage.initialize( config.dataBaseURL );
 debtCalculator.initialize( storage );
 clientApi.initialize( server.start( config.httpPort ), storage, debtCalculator );
-
-
-debtCalculator.calculateDebts( function() {} );
