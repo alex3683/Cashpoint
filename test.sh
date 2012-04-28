@@ -1,1 +1,1 @@
-./node_modules/.bin/buster test
+node_modules/buster/bin/buster-test
