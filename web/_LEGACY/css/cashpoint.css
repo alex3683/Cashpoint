@@ -1,0 +1,152 @@
+body {
+   margin: 0;
+}
+
+body, td {
+   font-family: Verdana, Arial;
+   font-size: 12px;
+}
+
+.ui-widget {
+   font-size: 12px;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    border: 1px solid #666666;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea {
+   width: 166px;
+}
+
+#addVoucherDialog > div,
+#addUserDialog > div {
+   padding: 2px;
+}
+
+#addVoucherDialog label,
+#addUserDialog label {
+   display: inline-block;
+   width: 100px;
+   text-align: right;
+}
+
+#addVoucherDialog label + div,
+#addUserDialog label + div {
+   display: inline-block;
+}
+
+#loader {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+   background-color: #2E6E9E;
+   z-index: 100;
+   
+   color: #fff;
+   text-align: center;
+   padding-top: 10px;
+}
+
+#headline {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   padding: 20px;
+   width: 100%;
+   height: 120px;
+   background: -moz-linear-gradient(top, rgba(235,241,246,1) 0%, rgba(171,211,238,1) 50%, rgba(137,195,235,1) 51%, rgba(213,235,251,1) 100%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,241,246,1)), color-stop(50%,rgba(171,211,238,1)), color-stop(51%,rgba(137,195,235,1)), color-stop(100%,rgba(213,235,251,1))); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top, rgba(235,241,246,1) 0%,rgba(171,211,238,1) 50%,rgba(137,195,235,1) 51%,rgba(213,235,251,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+#headline h1 {
+   color: #2E6E9E;
+   margin: 0;
+   margin-bottom: 20px;
+}
+#headline h1::before {
+   content: '.: ';
+}
+
+
+#content {
+   padding: 20px;
+}
+
+.dataTable {
+   dislay: table;
+}
+
+.dataTableHeader, .dataTableRow {
+   display: table-row;
+}
+
+.dataTable > div > .dataTableColumn {
+   padding: 3px 5px;
+   display: table-cell;
+   border-left: 1px solid #fff;
+}
+
+.dataTable > .dataTableRow > .dataTableColumn {
+   padding: 2px 5px;
+   background-color: rgba(235,241,246,1);
+   border-top: 1px solid #fff;
+}
+
+.dataTable > .dataTableHeader > .dataTableColumn {
+   color: #fff;
+   
+   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+   background:
+      url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iNiUiIHN0b3AtY29sb3I9IiMxZTU3OTkiIHN0b3Atb3BhY2l0eT0iMC44MSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMyOTg5ZDgiIHN0b3Atb3BhY2l0eT0iMC45Ii8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk0JSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIwLjk5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTU3OTkiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+   background: -moz-linear-gradient(top, rgba(30, 87, 153, 0.8) 0%, rgba(30, 87, 153, 0.81) 6%,
+      rgba(41, 137, 216, 0.9) 50%, rgba(30, 87, 153, 0.99) 94%, rgba(30, 87, 153, 1) 99%, rgba(30, 87, 153, 0)
+      100% ); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 87, 153, 0.8) ),
+      color-stop(6%, rgba(30, 87, 153, 0.81) ), color-stop(50%, rgba(41, 137, 216, 0.9) ),
+      color-stop(94%, rgba(30, 87, 153, 0.99) ), color-stop(99%, rgba(30, 87, 153, 1) ),
+      color-stop(100%, rgba(30, 87, 153, 0) ) ); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top, rgba(30, 87, 153, 0.8) 0%, rgba(30, 87, 153, 0.81) 6%,
+      rgba(41, 137, 216, 0.9) 50%, rgba(30, 87, 153, 0.99) 94%, rgba(30, 87, 153, 1) 99%, rgba(30, 87, 153, 0)
+      100% ); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top, rgba(30, 87, 153, 0.8) 0%, rgba(30, 87, 153, 0.81) 6%,
+      rgba(41, 137, 216, 0.9) 50%, rgba(30, 87, 153, 0.99) 94%, rgba(30, 87, 153, 1) 99%, rgba(30, 87, 153, 0)
+      100% ); /* Opera 11.10+ */
+   background: -ms-linear-gradient(top, rgba(30, 87, 153, 0.8) 0%, rgba(30, 87, 153, 0.81) 6%,
+      rgba(41, 137, 216, 0.9) 50%, rgba(30, 87, 153, 0.99) 94%, rgba(30, 87, 153, 1) 99%, rgba(30, 87, 153, 0)
+      100% ); /* IE10+ */
+   background: linear-gradient(top, rgba(30, 87, 153, 0.8) 0%, rgba(30, 87, 153, 0.81) 6%,
+      rgba(41, 137, 216, 0.9) 50%, rgba(30, 87, 153, 0.99) 94%, rgba(30, 87, 153, 1) 99%, rgba(30, 87, 153, 0)
+      100% ); /* W3C */
+   filter: progid:DXImageTransform.Microsoft.gradient(  startColorstr='#cc1e5799', endColorstr='#001e5799',
+      GradientType=0 ); /* IE6-8 */
+}
+
+.dataTable > div > .dataTableColumn:first-child  {
+   border-left: none;
+}
+
+.dataTable > .dataTableHeader > .dataTableColumn:first-child  {
+   -moz-border-radius-topleft: 5px;
+   -moz-border-radius-topright: 0px;
+   -moz-border-radius-bottomright: 0px;
+   -moz-border-radius-bottomleft: 0px;
+   -webkit-border-radius: 5px 0px 0px 0px;
+   border-radius: 5px 0px 0px 0px;
+}
+
+.dataTable > .dataTableHeader > .dataTableColumn:last-child {
+   -moz-border-radius-topleft: 0px;
+   -moz-border-radius-topright: 5px;
+   -moz-border-radius-bottomright: 0px;
+   -moz-border-radius-bottomleft: 0px;
+   -webkit-border-radius: 0px 5px 0px 0px;
+   border-radius: 0px 5px 0px 0px; 
+}
+
+.dataTable > div > .dataTableColumn:nth-child(0) {
+   width: 150px;
+}

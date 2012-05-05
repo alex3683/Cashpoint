@@ -23,10 +23,9 @@
    "dependencies": {
       "async": ">=0.1.15",
       "buster": ">=0.4.6",
-      "connect": ">=1.8.5",
+      "connect": ">=2.x",
       "connect-gzip": ">=0.1.5",
       "mongoose": ">=2.4.10",
-      "now": ">=0.8.1",
-      "sinon-buster": ">=0.4.2"
+      "now": ">=0.8.1"
    }
 }
