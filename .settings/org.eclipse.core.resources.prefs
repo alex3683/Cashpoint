@@ -1,3 +1,7 @@
-#Thu Sep 08 21:13:17 CEST 2011
+#Sat May 05 16:48:00 CEST 2012
 eclipse.preferences.version=1
+encoding//web/views/addUser.html=UTF-8
+encoding//web/views/addVoucher.html=UTF-8
+encoding//web/views/listUsers.html=UTF-8
+encoding//web/views/listVouchers.html=UTF-8
 encoding/<project>=UTF-8

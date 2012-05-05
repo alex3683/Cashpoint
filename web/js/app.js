@@ -1,28 +1,56 @@
 ( function() {
    'use strict';
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+   
+   var routes = [ {
+      path: '/listVouchers',
+      title: 'Kassenzettelübersicht',
+      controller: ListVouchersController
+   },
+   {
+      path: '/addVoucher',
+      title: 'Kassenzettel eingeben',
+      controller: AddVoucherController
+   },
+   {
+      path: '/listUsers',
+      title: 'Benutzerübersicht',
+      controller: ListUsersController
+   },
+   {
+      path: '/addUser',
+      title: 'Benutzer hinzufügen',
+      controller: AddUserController
+   } ];
+   
+   var defaultRoute = '/listVouchers';
+   
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-   angular.module( 'app' ).config( [ '$routeProvider', function( $routeProvider ) {
-
-      $routeProvider
-      .when( '/listVouchers', {
-         template: 'views/listVouchers.html',
-         controller: ListVouchersController
-      } )
-      .when( '/listUsers', {
-         template: 'views/listUsers.html',
-         controller: ListUsersController
-      } )
-      .when( '/addVoucher', {
-         template: 'views/addVoucher.html',
-         controller: AddVoucherController
-      } )
-      .when( '/addUser', {
-         template: 'views/addUser.html',
-         controller: AddUserController
-      } )
-      .otherwise( {
-         redirectTo: '/listVouchers'
+   angular.module( 'cashpoint', [] )
+   .config( function( $routeProvider ) {
+      
+      _.each( routes, function( route ) {
+         var templateUri = '/views' + route.path + '.html';
+         
+         $routeProvider.when( route.path, {
+            template: templateUri,
+            controller: route.controller
+         } );
+         
       } );
-   } ] );
+      
+      $routeProvider.otherwise( {
+         redirectTo: defaultRoute
+      } );
+      
+   } )
+   .factory( 'RouteManager', function() {
+      return {
+         routes: routes,
+         defaultRoute: defaultRoute
+      };
+   } );
 
 } )();

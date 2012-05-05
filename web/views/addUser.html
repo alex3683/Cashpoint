@@ -1,10 +1,21 @@
 <div id="addUserView">
 
-   <form class="well">
-      <label for="addUserName">Label name</label>
-         <input id="addUserName"  type="text" class="span3" placeholder="Benutzername" ng-model="user.name">
+   <form class="form-horizontal">
+      <fieldset>
+         <legend>Benutzer hinzufügen</legend>
+         <div class="control-group">
+            <label class="control-label" for="addUserName">Label name</label>
+            <div class="controls">
+               <input id="addUserName"  type="text" class="span3" placeholder="Benutzername" ng-model="user.name">
+            </div>
+         </div>
          
-      <button type="submit" class="btn">Speichern</button>
+         <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Speichern</button>
+            <button class="btn">Zurücksetzen</button>
+         </div>
+      </fieldset>
+       
    </form>
    
 </div>

@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cashpoint</title>
-<link href="lib/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" />
-<link href="css/cashpoint.css" media="screen" rel="stylesheet" />
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <title>Cashpoint</title>
+   
+   <link href="lib/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" />
+   <link href="css/cashpoint.css" media="screen" rel="stylesheet" />
 </head>
-<body>
+<body ng-controller="MainController">
+
    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
          <div class="container-fluid">
@@ -17,14 +19,18 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
             </a>
+            
             <a class="brand" href="#">Kasse</a>
 
             <div class="nav-collapse">
                <ul class="nav">
+                  <li ng-repeat="menuItem in menuItems" ng-class="{active: menuItem.active}"><a href="#{{menuItem.path}}">{{menuItem.title}}</a></li>
+                  
+                  <!-- 
                   <li class="active"><a href="#/listVouchers">Kassenzettelübersicht</a></li>
                   <li><a href="#/addVoucher">Kassenzettel eingeben</a></li>
                   <li><a href="#/listUsers">Benutzerübersicht</a></li>
-                  <li><a href="#/addUser">Benutzer hinzufügen</a></li>
+                  <li><a href="#/addUser">Benutzer hinzufügen</a></li> -->
                </ul>
             </div>
             <!--/.nav-collapse -->
@@ -50,19 +56,24 @@
    <script type="text/javascript" src="lib/underscore-min.js"></script>
    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
    
+   <!-- controllers -->
+   <script type="text/javascript" src="js/controllers/AddUserController.js"></script>
+   <script type="text/javascript" src="js/controllers/AddVoucherController.js"></script>
+   <script type="text/javascript" src="js/controllers/ListUsersController.js"></script>
+   <script type="text/javascript" src="js/controllers/ListVouchersController.js"></script>
+   <script type="text/javascript" src="js/controllers/MainController.js"></script>
    
+   <!-- modules -->
    <script type="text/javascript" src="js/app.js"></script>
    
-   <!-- 
-   <script type="text/javascript" src="js/external/date.format.js"></script>
-   <script type="text/javascript" src="js/external/jquery-1.7.2.min.js"></script>
-   <script type="text/javascript" src="js/external/jquery-ui-1.8.18.min.js"></script>
-   <script type="text/javascript" src="js/external/angular-1.0.0rc6.min.js"></script> -->
-   
    <script type="text/javascript">
-      now.ready( function() {
-         angular.bootstrap( document );
+   
+      angular.element( document ).ready( function() {
+         now.ready( function() {
+            angular.bootstrap( document, [ 'cashpoint' ] );
+         } );
       } );
    </script>
+   
 </body>
 </html>
