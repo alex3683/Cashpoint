@@ -24,21 +24,27 @@
 
             <div class="nav-collapse">
                <ul class="nav">
-                  <li ng-repeat="menuItem in menuItems" ng-class="{active: menuItem.active}"><a href="#{{menuItem.path}}">{{menuItem.title}}</a></li>
+               
+                  <li ng-repeat="menuItem in menuItems" ng-class="{active: menuItem.active}"><a href="#{{menuItem.path}}" ng-bind="menuItem.title"></a></li>
                   
-                  <!-- 
-                  <li class="active"><a href="#/listVouchers">Kassenzettelübersicht</a></li>
-                  <li><a href="#/addVoucher">Kassenzettel eingeben</a></li>
-                  <li><a href="#/listUsers">Benutzerübersicht</a></li>
-                  <li><a href="#/addUser">Benutzer hinzufügen</a></li> -->
+               <!-- </ul>
+               <ul class="nav pull-right"> -->
+               
+                  <li class="loadingIndicator" ng-show="loadingIndicatorVisible" ng-bind="loadingIndicatorText">Lädt ...</li>
+                  
                </ul>
             </div>
-            <!--/.nav-collapse -->
          </div>
       </div>
    </div>
 
-   <div class="container">
+   <div class="container-fluid">
+      <div class="alert alert-success"><a class="close" data-dismiss="alert" href="#">×</a>
+      Hallo, wie gehts?
+      <ul>
+         <li>Sie müssen einen Namen eingeben</li>
+      </ul>
+   </div>
 
       <div ng-view></div>
 
@@ -54,6 +60,8 @@
 
    <script type="text/javascript" src="nowjs/now.js"></script>
    <script type="text/javascript" src="lib/underscore-min.js"></script>
+   <script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
+   <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
    
    <!-- controllers -->
@@ -64,15 +72,26 @@
    <script type="text/javascript" src="js/controllers/MainController.js"></script>
    
    <!-- modules -->
+   <script type="text/javascript" src="js/modules/bootstrapIntegration.js"></script>
+   <script type="text/javascript" src="js/modules/filters.js"></script>
    <script type="text/javascript" src="js/app.js"></script>
    
    <script type="text/javascript">
-   
-      angular.element( document ).ready( function() {
-         now.ready( function() {
-            angular.bootstrap( document, [ 'cashpoint' ] );
+      ( function() {
+         
+         // this flag prevents from reinitializing the client app whenever the server is restarted
+         var angularBootstrapped = false;
+         angular.element( document ).ready( function() {
+            now.ready( function() {
+               if( angularBootstrapped ) {
+                  return;
+               }
+               angularBootstrapped = true;
+               angular.bootstrap( document, [ 'cashpoint' ] );
+            } );
          } );
-      } );
+         
+      } )();
    </script>
    
 </body>

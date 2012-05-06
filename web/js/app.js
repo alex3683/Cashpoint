@@ -28,7 +28,9 @@
    
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-   angular.module( 'cashpoint', [] )
+   var dependencies = [ 'filters', 'bootstrapIntegration' ];
+   
+   angular.module( 'cashpoint', dependencies )
    .config( function( $routeProvider ) {
       
       _.each( routes, function( route ) {
