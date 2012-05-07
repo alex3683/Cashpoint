@@ -6,7 +6,7 @@ function AddVoucherController( $scope, $filter ) {
    $scope.users = [];
    var blankVoucher = {
       'amount': null,
-      'paid_at': $filter( 'date' )( new Date(), 'dd.MM.yyyy' ),
+      'paid_date': $filter( 'date' )( new Date(), 'dd.MM.yyyy' ),
       'paid_by': null,
       'comment': ''
    };
