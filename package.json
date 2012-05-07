@@ -26,6 +26,7 @@
       "connect": ">=2.x",
       "connect-gzip": ">=0.1.5",
       "mongoose": ">=2.4.10",
-      "now": ">=0.8.1"
+      "now": ">=0.8.1",
+      "underscore": "x"
    }
 }

@@ -22,11 +22,9 @@ function MainController( $scope, $route, RouteManager ) {
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
    
    $scope.$on( 'toggleLoadingIndicator', function( event, show, label ) {
-      console.log( typeof( show ) );
-      console.log( "LoadingIndicator %s: %s", show, label );
-      
       $scope.loadingIndicatorText = label || '';
       $scope.loadingIndicatorVisible = show;
+      // TODO: This is not the angular way, but I don't know the better way yet ...
       if( !$scope.$$phase ) {
          $scope.$digest();
       }

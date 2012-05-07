@@ -2,7 +2,7 @@
 
    <h2>Kassenzettel hinzufügen</h2>
 
-   <form class="form-horizontal">
+   <form class="form-horizontal" name="addVoucherForm">
       <fieldset>
          <legend></legend>
          
@@ -16,7 +16,7 @@
          <div class="control-group">
             <label class="control-label" for="addVoucherPaidDate">Bezahlt am</label>
             <div class="controls">
-               <input id="addVoucherPaidDate" type="date" class="span3" placeholder="Bezahlt am" ng-model="voucher.paid_at" required>
+               <input id="addVoucherPaidDate" type="date" class="span3" placeholder="Bezahlt am" ng-model="voucher.paid_date" required>
             </div>
          </div>
          

@@ -1,12 +1,12 @@
-function AddVoucherController( $scope ) {
+function AddVoucherController( $scope, $filter ) {
    'use strict';
    
    $scope.$emit( 'toggleLoadingIndicator', true, "Lade Benutzer ..." );
-
+   
    $scope.users = [];
    var blankVoucher = {
       'amount': null,
-      'paid_at': null,
+      'paid_at': $filter( 'date' )( new Date(), 'dd.MM.yyyy' ),
       'paid_by': null,
       'comment': ''
    };
@@ -26,6 +26,20 @@ function AddVoucherController( $scope ) {
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
    
    $scope.addVoucher = function() {
-      console.log( $scope.voucher );
+      var user = {
+            name: $scope.voucher.paid_by
+      };
+      var voucher = _.clone( $scope.voucher );
+      delete voucher.paid_by;
+      voucher.repaid = false;
+      now.addVoucherForUser( voucher, user, function( err, res ) {
+         if( err ) {
+            console.error( err );
+         }
+         else {
+            console.log( "successful!");
+            reset();
+         }
+      } );
    };
 }

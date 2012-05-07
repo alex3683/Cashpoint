@@ -22,7 +22,7 @@
             <tbody>
                <tr ng-repeat="voucher in vouchers">
                   <td>{{voucher.paid_date | date:'dd.MM.yyyy'}}</td>
-                  <td>{{voucher.users | voucherUser}}</td>
+                  <td>{{voucher.user.name}}</td>
                   <td>{{voucher.amount}}</td>
                   <td>{{voucher.comment}}</td>
                   <td>
