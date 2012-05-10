@@ -10,6 +10,10 @@ function ListVouchersController( $scope ) {
          $scope.vouchers = vouchers;
          $scope.$emit( 'toggleLoadingIndicator', false );
          $scope.$digest();
+         
+         now.calculateDebts( vouchers, function( err, debts ) {
+            console.log( debts );
+         } );
       } );
    }
    refresh();

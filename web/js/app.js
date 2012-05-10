@@ -14,6 +14,11 @@
       controller: AddVoucherController
    },
    {
+      path: '/statistics',
+      title: 'Statistiken',
+      controller: StatisticsController
+   },
+   {
       path: '/listUsers',
       title: 'Benutzerübersicht',
       controller: ListUsersController
