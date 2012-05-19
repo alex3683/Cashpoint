@@ -4,7 +4,7 @@ var server = require( './lib/server' );
 var debtCalculator = require( './lib/debt_calculator' );
 var clientApi = require( './lib/client_api' );
 
-var config = JSON.parse( fs.readFileSync( __dirname + '/config.json', 'utf-8' ) );
+var config = require( './config.json' );
 
 console.log( config );
 

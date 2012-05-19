@@ -39,12 +39,13 @@
    </div>
 
    <div class="container-fluid">
-      <div class="alert alert-success"><a class="close" data-dismiss="alert" href="#">×</a>
-      Hallo, wie gehts?
-      <ul>
-         <li>Sie müssen einen Namen eingeben</li>
-      </ul>
-   </div>
+      <div class="alert alert-error" ng-show="false">
+         <a class="close" data-dismiss="alert" ng-click="closeSuccess()" href="#">×</a>
+         Hallo, wie gehts?
+         <ul>
+            <li>Sie müssen einen Namen eingeben</li>
+         </ul>
+      </div>
 
       <div ng-view></div>
 

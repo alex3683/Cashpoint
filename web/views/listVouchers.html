@@ -20,7 +20,7 @@
                </tr>
             </thead>
             <tbody>
-               <tr ng-repeat="voucher in vouchers">
+               <tr ng-repeat="voucher in vouchers | orderBy:'paid_date':true">
                   <td>{{voucher.paid_date | date:'dd.MM.yyyy'}}</td>
                   <td>{{voucher.user.name}}</td>
                   <td>{{voucher.amount}}</td>
@@ -49,10 +49,9 @@
             </thead>
             <tbody>
                <tr ng-repeat="debt in debts">
-                  <td>{{voucher.paid_date | date:'dd.MM.yyyy'}}</td>
-                  <td>{{voucher.users | voucherUser}}</td>
-                  <td>{{voucher.amount}}</td>
-                  <td>{{voucher.comment}}</td>
+                  <td>{{debt.debtor.name}}</td>
+                  <td>{{debt.creditor.name}}</td>
+                  <td>{{debt.amount | roundHalfUp}} €</td>
                </tr>
             </tbody>
          </table>

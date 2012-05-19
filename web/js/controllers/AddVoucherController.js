@@ -1,4 +1,4 @@
-function AddVoucherController( $scope, $filter ) {
+function AddVoucherController( $scope, $filter, parseDate ) {
    'use strict';
    
    $scope.$emit( 'toggleLoadingIndicator', true, "Lade Benutzer ..." );
@@ -31,14 +31,19 @@ function AddVoucherController( $scope, $filter ) {
       };
       var voucher = _.clone( $scope.voucher );
       delete voucher.paid_by;
+      // TODO: parse the date string to a javascript date object!
+      
+      voucher.paid_date = parseDate( $scope.voucher.paid_date );
       voucher.repaid = false;
-      now.addVoucherForUser( voucher, user, function( err, res ) {
+      voucher.user = user;
+      now.addVoucher( voucher, function( err, res ) {
          if( err ) {
             console.error( err );
          }
          else {
             console.log( "successful!");
             reset();
+            $scope.$digest();
          }
       } );
    };

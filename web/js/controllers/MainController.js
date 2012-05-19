@@ -30,4 +30,9 @@ function MainController( $scope, $route, RouteManager ) {
       }
    } );
    
+   now.handleEvent = function( event ) {
+      console.log( event );
+      $scope.$broadcast( 'serverEvent', event );
+   };
+   
 }

@@ -12,12 +12,13 @@ function AddUserController( $scope ) {
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
    
    $scope.addUser = function() {
-      console.log( "adding %o", $scope.user );
+      console.log( 'adding %o', $scope.user );
       now.addUser( $scope.user, function( err, user ) {
          console.log( err );
          console.log( user );
          if( !err ) {
             reset();
+            $scope.$digest();
          }
       } );
    };

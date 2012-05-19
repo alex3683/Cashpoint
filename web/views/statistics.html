@@ -1,9 +1,9 @@
-<div id="listUsersView">
+<div id="statisticsView">
    
    <div class="row">
       <div class="span4">
       
-         <h2>Benutzerübersicht</h2>
+         <h2>Statistiken</h2>
       
          <table class="table table-striped table-bordered table-condensed">
             <thead>
@@ -17,7 +17,7 @@
                <tr ng-repeat="user in users | orderBy:'name'">
                   <td>{{user.name}}</td>
                   <td>{{user.vouchers}}</td>
-                  <td>{{user.amount}} €</td>
+                  <td>{{user.amount}} �</td>
                </tr>
             </tbody>
          </table>

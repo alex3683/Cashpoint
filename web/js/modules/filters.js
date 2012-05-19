@@ -2,9 +2,9 @@
    'use strict';
    
    angular.module( 'filters', [] )
-   .filter( "voucherUser", function() {
-      return function( users ) {
-         return users[ 0 ].name;
+   .filter( 'roundHalfUp', function() {
+      return function( number ) {
+         return Math.round( number * 100 ) / 100;
       };
    } );
    

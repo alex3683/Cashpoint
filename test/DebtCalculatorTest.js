@@ -38,7 +38,7 @@ buster.testCase( 'DebtCalculator', {
       debtCalculator.calculateDebts( vouchers, function( err, results ) {
          assert.equals( results[0].debtor, self.hans );
          assert.equals( results[0].creditor, self.jupp );
-         assert.equals( results[0].payment, 25 );
+         assert.equals( results[0].amount, 25 );
          done();
       } );
    }

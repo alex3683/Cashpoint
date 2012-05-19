@@ -4,15 +4,16 @@ function ListVouchersController( $scope ) {
    $scope.$emit( 'toggleLoadingIndicator', true, "Lade Kassenzettel ..." );
    
    $scope.vouchers = [];
+   $scope.debts = [];
    
    function refresh() {
       now.getNonRepaidVouchers( function( err, vouchers ) {
          $scope.vouchers = vouchers;
-         $scope.$emit( 'toggleLoadingIndicator', false );
-         $scope.$digest();
          
          now.calculateDebts( vouchers, function( err, debts ) {
-            console.log( debts );
+            $scope.debts = debts;
+            $scope.$emit( 'toggleLoadingIndicator', false );
+            $scope.$digest();
          } );
       } );
    }
