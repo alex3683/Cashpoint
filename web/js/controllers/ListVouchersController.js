@@ -33,6 +33,9 @@ function ListVouchersController( $scope ) {
    
    $scope.markRepaid = function( voucher ) {
       console.log( "repaid %o", voucher );
+      now.setVoucherToRepaid(voucher,function(repaidVoucher){
+         console.log( repaidVoucher );
+      })
    };
    
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
